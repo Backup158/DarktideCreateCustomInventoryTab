@@ -29,14 +29,14 @@ local managers = Managers
 local ewc = get_mod("weapon_customization")
 local ewc_using_visual_equipment
 -- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-mod._tabs_to_jump -- disgusting global variable so the hook can actually use it
+_tabs_to_jump -- disgusting global variable so the hook can actually use it
 -- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 if ewc then 
     ewc_using_visual_equipment = ewc:get("mod_option_visible_equipment")
     if ewc_using_visual_equipment then
-        mod._tabs_to_jump = 1    -- avoid crash
+        _tabs_to_jump = 1    -- avoid crash
     else
-        mod._tabs_to_jump = 2    -- place after talents tree
+        _tabs_to_jump = 2    -- place after talents tree
     end
 end
 
@@ -58,7 +58,7 @@ mod:hook_require("scripts/ui/views/inventory_background_view/inventory_backgroun
             --      without on_all_mods_loaded: +1 on top of that (with fuckery based on load order. may crash)
             --      on_all_mods_loaded: work as usual with +1, crash if you do +2 (regardless of load order), not show up if you do +3
             --  i think making it 0 would replace mastery lol (or cosmetics if you're inspecting someone else)
-            self._views_settings[#self._views_settings + mod._tabs_to_jump] = {
+            self._views_settings[#self._views_settings + _tabs_to_jump] = {
                 view_name = "inventory_view",
                 display_name = "loc_enhanced_descriptions_dictionary_name",
                 update = function (content, style, dt) end,

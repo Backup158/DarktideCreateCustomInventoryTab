@@ -28,14 +28,11 @@ local managers = Managers
 -- ###########
 local ewc = get_mod("weapon_customization")
 local ewc_using_visual_equipment
--- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
--- disgusting global variable so the hook can actually use it
--- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 local _tabs_to_jump = 2 -- Place after talents
 if ewc then 
     ewc_using_visual_equipment = ewc:get("mod_option_visible_equipment")
     if ewc_using_visual_equipment then
-        _tabs_to_jump = 1    -- avoid crash
+        _tabs_to_jump = 1    -- avoid crash with both
     end
 end
 

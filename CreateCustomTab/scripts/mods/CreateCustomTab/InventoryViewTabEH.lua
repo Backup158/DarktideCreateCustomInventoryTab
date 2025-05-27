@@ -61,6 +61,7 @@ mod:hook_require("scripts/ui/views/inventory_background_view/inventory_backgroun
                 view_name = "inventory_view",
                 display_name = "loc_enhanced_descriptions_dictionary_name",
                 update = function (content, style, dt) end,
+                --[[
                 context = {
                     can_exit = true,
                 },
@@ -79,6 +80,7 @@ mod:hook_require("scripts/ui/views/inventory_background_view/inventory_backgroun
                         force_instant_camera = true,
                     }
                 end,
+                ]]
                 view_context = {
                     can_exit = true,
                     camera_settings = {

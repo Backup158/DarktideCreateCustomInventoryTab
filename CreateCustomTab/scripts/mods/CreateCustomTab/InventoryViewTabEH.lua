@@ -61,7 +61,6 @@ mod:hook_require("scripts/ui/views/inventory_background_view/inventory_backgroun
                 view_name = "inventory_view",
                 display_name = "loc_enhanced_descriptions_dictionary_name",
                 update = function (content, style, dt) end,
-                --[[
                 context = {
                     can_exit = true,
                 },
@@ -80,18 +79,7 @@ mod:hook_require("scripts/ui/views/inventory_background_view/inventory_backgroun
                         force_instant_camera = true,
                     }
                 end,
-                ]]
                 view_context = {
-                    can_exit = true,
-                    camera_settings = {
-                        {"event_inventory_set_camera_position_axis_offset", "x", is_ogryn and 1.8 or 1.45, 0.5, math_easeCubic},
-                        {"event_inventory_set_camera_position_axis_offset", "y", 0, 0.5, math_easeCubic},
-                        {"event_inventory_set_camera_position_axis_offset", "z", 0, 0.5, math_easeCubic},
-                        {"event_inventory_set_camera_rotation_axis_offset", "x", 0, 0.5, math_easeCubic},
-                        {"event_inventory_set_camera_rotation_axis_offset", "y", 0, 0.5, math_easeCubic},
-                        {"event_inventory_set_camera_rotation_axis_offset", "z", 0, 0.5, math_easeCubic},
-                    },
-                    --[[
                         -- I have no idea what this is for
                         -- when you hover the widgets for each visible equipment slot?
                     tabs = {
@@ -114,7 +102,7 @@ mod:hook_require("scripts/ui/views/inventory_background_view/inventory_backgroun
                             layout = {}
                         }
                     }
-                    ]]
+                    
                 }
             }
             -- flag to avoid creating duplicate tabs

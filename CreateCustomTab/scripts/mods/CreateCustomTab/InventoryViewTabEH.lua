@@ -26,14 +26,19 @@ local managers = Managers
 -- ###########
 -- Setting variables
 -- ###########
-local ewc = get_mod("weapon_customization")
-local ewc_using_visual_equipment
+-- How far ahead to place
 local _tabs_to_jump = 2 -- Place after talents
+
+-- EWC creates the tab regardless of setting
+--  so it can reenable its stuff based on setting, midgame, without crashing
+--  just has the weapon name if it's disabled
+local ewc = get_mod("weapon_customization")
 if ewc then 
-    ewc_using_visual_equipment = ewc:get("mod_option_visible_equipment")
-    if ewc_using_visual_equipment then
-        _tabs_to_jump = 1    -- avoid crash with both
-    end
+    _tabs_to_jump = 1    -- avoid crash with both
+    
+    --if ewc:get("mod_option_visible_equipment") then
+        
+    --end
 end
 
 mod:hook_require("scripts/ui/views/inventory_background_view/inventory_background_view", function(instance)
